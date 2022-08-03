@@ -1,13 +1,21 @@
 #include <stdio.h>
-int pointer(int *);
+#include <string.h>
 
 int main(){
-	int value1;
-	for(value1=0; value1 < 31; pointer(&value1)){
-		printf("value=%d\n",value1);
-	}
-}
-
-int pointer(int *value){
-	*value +=1;
+    int v1;
+    char name[10];
+    printf("이름을 지정하세요 : ");
+    scanf("%s", &name);
+    printf("\n당신의 이름은 %s입니다.\n", name);
+    printf("상황이 생겼습니다.\n한 노인이 있는데 그 노인은 평소 폐지를 줍고 다니던 사람이였습니다. \n그런데 갑자기 심장마비가 와서 죽었습니다. \n당신은 그런 노인의 장례식을 도와줄 공무원입니다. \n당신은 어떠한 선택을 할 것인가요?\n");
+    printf("\n1. 앞뒤 안보고 노인의 집에 처들어가 돈을 훔친다.\n2. 묵묵히 도와준다.\n3. 그런거 다 좆까고 그냥 내 갈길 찾아 떠나러 간다.\n4. 그 노인의 유골을 우유에 타 마신다.\n\n");
+    printf("1~4까지 선택하시오 : ");
+    scanf("%d", &v1);
+    switch(v1){
+    case 1 : printf("당신은 돈에 미친놈이군요. 실망했습니다. 꺼지세요."); break;
+    case 2 : printf("정말 좋은 선택을 하였습니다. 그들은 평안히 떠났으며 천국에서 평화롭게 지내고 있답니다."); break;
+    case 3 : printf("당신은 정말 전형적인 공무원이군요. 스토리상 여기서 끝맺지만 앞으론 그렇게 살지 마시오.");break;
+    case 4 : printf("고맙습니다. 당신은 그저 에릭 카트먼에 비하면 아주 살짝 나은 사람이군요.");break;
+    }
+    return 0;
 }
